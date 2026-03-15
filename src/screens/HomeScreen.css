@@ -1,0 +1,352 @@
+.home-screen {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 16px;
+  border-radius: var(--radius-lg);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.user-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+}
+
+.greeting {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.username {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  transition: all var(--transition-fast);
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--secondary);
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.feed-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.see-all {
+  font-size: 14px;
+  color: var(--secondary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Viral List */
+.viral-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.viral-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.viral-item:hover {
+  transform: translateX(8px);
+  border-color: var(--highlight);
+  box-shadow: 0 0 15px rgba(255, 79, 216, 0.2);
+}
+
+.rank {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--highlight);
+  width: 32px;
+  text-align: center;
+}
+
+.viral-item img {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.track-info {
+  flex: 1;
+}
+
+.track-info h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.track-info p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.play-btn-small {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--glow-primary);
+}
+
+/* Horizontal Scroll for Albums */
+.horizontal-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  margin-right: -20px;
+  padding-right: 20px;
+  scrollbar-width: none;
+}
+.horizontal-scroll::-webkit-scrollbar { display: none; }
+
+.album-card {
+  min-width: 150px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.cover-wrapper {
+  width: 126px;
+  height: 126px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.cover-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.album-card:hover .play-overlay {
+  opacity: 1;
+}
+
+.album-info h4 {
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.album-info p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Hero Card (For You) */
+.hero-card {
+  height: 200px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 24px;
+  background: linear-gradient(45deg, rgba(11,11,15,0.9), rgba(122,92,255,0.4)), url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=800') center/cover;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.hero-content {
+  z-index: 2;
+}
+
+.hero-content span {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--highlight);
+}
+
+.hero-content h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 4px 0;
+}
+
+.hero-play {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: transform var(--transition-bounce);
+}
+
+.hero-card:hover .hero-play {
+  transform: scale(1.1);
+}
+
+/* Friend Activity List */
+.friends-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.friend-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.friend-avatar-wrapper {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.friend-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.active-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  background: #00FF66;
+  border: 2px solid var(--bg-color);
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00FF66;
+}
+
+.friend-info {
+  flex: 1;
+}
+
+.friend-info h4 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.friend-info p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.friend-info span {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.friend-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-btn-small {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.pb-100 {
+  padding-bottom: 100px; /* Space for bottom nav */
+}

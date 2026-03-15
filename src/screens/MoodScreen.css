@@ -1,0 +1,143 @@
+.mood-screen {
+  padding: 40px 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mood-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mood-header h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.mood-header p {
+  color: var(--text-muted);
+}
+
+.mood-bubbles {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+  transition: all var(--transition-smooth);
+}
+
+.mood-bubbles.minimized {
+  flex: 0 0 auto;
+  align-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.bubble-wrapper {
+  animation: floatOrb 6s ease-in-out infinite alternate;
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+}
+
+.bubble-wrapper:nth-child(even) {
+  animation-direction: alternate-reverse;
+}
+
+.bubble-wrapper.active {
+  transform: scale(1.1) !important;
+  animation: none;
+}
+
+.mood-bubble {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--mood-bg);
+  border: 1px solid var(--mood-color);
+  box-shadow: 0 0 20px var(--mood-bg);
+  transition: all var(--transition-fast);
+}
+
+.mood-bubble span {
+  font-weight: 600;
+  color: var(--text-main);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.bubble-wrapper:hover .mood-bubble {
+  filter: brightness(1.2);
+  box-shadow: 0 0 30px var(--mood-color);
+  transform: scale(1.05);
+}
+
+.mood-playlists {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 80px;
+  margin: 0 -20px;
+  padding: 0 20px 80px;
+  scrollbar-width: none;
+}
+
+.mood-playlists::-webkit-scrollbar { display: none; }
+
+.mood-playlists h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.playlist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.playlist-row {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  gap: 16px;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.playlist-row:hover {
+  transform: translateX(8px);
+}
+
+.playlist-cover {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playlist-info {
+  flex: 1;
+}
+
+.playlist-info h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.playlist-info p {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.play-circle-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,202 @@
+.playlist-creator-screen {
+  padding: 40px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.creator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.creator-header h2 {
+  font-size: 24px;
+}
+
+.save-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  background: var(--gradient-primary);
+  border: none;
+}
+
+.creator-top {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+}
+
+.cover-generator {
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px dashed var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.cover-generator:hover {
+  border-color: var(--secondary);
+  box-shadow: var(--glow-secondary);
+}
+
+.gen-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--secondary);
+  font-size: 11px;
+}
+
+.generated-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fadeEnter 0.5s ease;
+}
+
+.loader {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(0, 229, 255, 0.3);
+  border-top-color: var(--secondary);
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+
+.playlist-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.p-title-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--glass-border);
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  padding-bottom: 4px;
+}
+
+.p-desc-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  resize: none;
+  font-family: inherit;
+  outline: none;
+}
+
+.collab-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.collab-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.collab-info h4 {
+  font-size: 15px;
+}
+
+.collab-info p {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.switch {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  position: relative;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.switch.on {
+  background: var(--primary);
+  box-shadow: var(--glow-primary);
+}
+
+.switch .knob {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all var(--transition-fast);
+}
+
+.switch.on .knob {
+  transform: translateX(20px);
+}
+
+.tracklist-section h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.drag-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.drag-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  gap: 12px;
+  transition: transform var(--transition-fast);
+}
+
+.drag-item:active {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.drag-handle {
+  cursor: grab;
+  color: var(--text-muted);
+}
+
+.drag-info h4 {
+  font-size: 15px;
+}
+
+.drag-info p {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.add-track-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-style: dashed;
+}

@@ -1,0 +1,67 @@
+.splash-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: radial-gradient(circle at center, rgba(122, 92, 255, 0.15), var(--bg-color) 60%);
+  cursor: pointer;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.sonic-logo {
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: 8px;
+  margin: 0;
+  text-shadow: var(--glow-primary);
+  animation: pulseLogo 3s infinite alternate;
+}
+
+.waveform {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 40px;
+}
+
+.waveform .bar {
+  width: 6px;
+  height: 100%;
+  background: var(--gradient-secondary);
+  border-radius: 4px;
+  animation: equalize 1s ease-in-out infinite alternate;
+  box-shadow: var(--glow-secondary);
+}
+
+.splash-caption {
+  position: absolute;
+  bottom: 40px;
+  font-size: 14px;
+  color: var(--text-muted);
+  animation: fadeInOut 2s infinite;
+}
+
+/* Animations */
+@keyframes equalize {
+  0% { height: 10px; }
+  100% { height: 40px; }
+}
+
+@keyframes pulseLogo {
+  0% { transform: scale(1); filter: brightness(1); }
+  100% { transform: scale(1.05); filter: brightness(1.2); }
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
